@@ -25,7 +25,7 @@
 			</div>
 
 			<div class="control">
-				<input type="file" name="imagem" accept="image/png, image/jpeg" required>
+				<input type="file" name="imagem" accept="image/png, image/jpeg, image/gif" required>
 			</div>
 
 
