@@ -7,10 +7,10 @@
 <?php
 	require('../connect.php');
 
-	$nome = $_POST['nome'];
-	$universo = $_POST['universo'];
-	$capacidade = $_POST['capacidade'];
-	$descricao = $_POST['descricao'];
+	$nome = mysql_real_escape_string($_POST['nome']);
+	$universo = mysql_real_escape_string($_POST['universo']);
+	$capacidade = mysql_real_escape_string($_POST['capacidade']);
+	$descricao = mysql_real_escape_string($_POST['descricao']);
 
 	$query = " INSERT INTO `nave` (`nome`, `universo`, `capacidade`, `descricao`)
 			   VALUES ('$nome', '$universo', '$capacidade', '$descricao')
@@ -29,12 +29,28 @@
 	$extensao = pathinfo($nome, PATHINFO_EXTENSION);
 	$extensao = strtolower($extensao);
 
+	// Verificando tentaiva de invasão pela imagem
+	$permitido = False;
+	$extensaoPermitida = array('png', 'jpg', 'jpeg', 'gif');
+
+	for ($i = 0; $i < count($extensaoPermitida); $i++){
+		if ($extensao == $extensaoPermitida[$i]){
+			$permitido = True;
+		}
+	}
+
+	if(!$permitido){
+		header('Location: ../../pages/internal-system/ship-registration.php');
+		exit();
+	}
+
+	// Enviando para o servidor
 	$novoNome = uniqid(time()) . '.' . $extensao;
 	$destino = '../../images/ships/' . $novoNome;
 
 	move_uploaded_file($arquivo_tmp, $destino);
 
-	// Gravando imagem no servidor
+	// Gravando imagem no bd
 	$query = " INSERT INTO `imagem` (`nome`, `idNave`)
 			   VALUES ('$novoNome', '$ultimoId')
 	";
@@ -42,5 +58,6 @@
 
 	header('Location: ../../pages/internal-system/ship-registration.php');
 	exit();
+
 ?>
 </html>
