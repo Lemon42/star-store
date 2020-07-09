@@ -23,6 +23,9 @@
 			<div class="control">
 				<input name="descricao" type="text" placeholder="Descrição técnica" class="input is-info" required>
 			</div>
+			<div class="control">
+				<input name="valor" type="text" placeholder="Valor da nave" class="input is-info dinheiro" required>
+			</div>
 
 			<div class="control">
 				<input type="file" name="imagem" accept="image/png, image/jpeg, image/gif" required>
@@ -32,6 +35,13 @@
 			<button type="submit" class="button is-link">Cadastrar</button>
 		</form>
 	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<!-- Mascara de Valor -->
+	<script src="../../../js/mask-number-min.js"></script>
+	<script>
+    	$('.dinheiro').mask('#.##0,00', { reverse: true });
+    </script>
 </div>
 </body>
 </html>

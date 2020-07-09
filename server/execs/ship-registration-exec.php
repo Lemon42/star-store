@@ -11,11 +11,11 @@
 	$universo = mysql_real_escape_string($_POST['universo']);
 	$capacidade = mysql_real_escape_string($_POST['capacidade']);
 	$descricao = mysql_real_escape_string($_POST['descricao']);
+	$valor = mysql_real_escape_string($_POST['valor']);
 
-	$query = " INSERT INTO `nave` (`nome`, `universo`, `capacidade`, `descricao`)
-			   VALUES ('$nome', '$universo', '$capacidade', '$descricao')
+	$queryDados = " INSERT INTO `nave` (`nome`, `universo`, `capacidade`, `descricao`, `valor`)
+			   		VALUES ('$nome', '$universo', '$capacidade', '$descricao', '$valor')
 	";
-	mysql_query($query, $con);
 
 	// ************
 	// ** Imagem **
@@ -29,7 +29,7 @@
 	$extensao = pathinfo($nome, PATHINFO_EXTENSION);
 	$extensao = strtolower($extensao);
 
-	// Verificando tentaiva de invasão pela imagem
+	// Verificando tentativa de invasão pela imagem
 	$permitido = False;
 	$extensaoPermitida = array('png', 'jpg', 'jpeg', 'gif');
 
@@ -51,10 +51,13 @@
 	move_uploaded_file($arquivo_tmp, $destino);
 
 	// Gravando imagem no bd
-	$query = " INSERT INTO `imagem` (`nome`, `idNave`)
+	$queryImg = " INSERT INTO `imagem` (`nome`, `idNave`)
 			   VALUES ('$novoNome', '$ultimoId')
 	";
-	mysql_query($query, $con);
+	
+	// Enviando as informações para o servidor
+	mysql_query($queryDados, $con);
+	mysql_query($queryImg, $con);
 
 	header('Location: ../../pages/internal-system/ship-registration.php');
 	exit();
