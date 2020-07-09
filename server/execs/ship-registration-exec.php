@@ -21,8 +21,6 @@
 	// ** Imagem **
 	// ************
 
-	$ultimoId = mysql_insert_id();
-
 	$arquivo_tmp = $_FILES[ 'imagem' ][ 'tmp_name' ];
 	$nome = $_FILES[ 'imagem' ][ 'name' ];
 
@@ -49,14 +47,14 @@
 	$destino = '../../images/ships/' . $novoNome;
 
 	move_uploaded_file($arquivo_tmp, $destino);
-
-	// Gravando imagem no bd
-	$queryImg = " INSERT INTO `imagem` (`nome`, `idNave`)
-			   VALUES ('$novoNome', '$ultimoId')
-	";
 	
 	// Enviando as informações para o servidor
 	mysql_query($queryDados, $con);
+	$ultimoId = mysql_insert_id();
+
+	$queryImg = " INSERT INTO `imagem` (`nome`, `idNave`)
+				VALUES ('$novoNome', '$ultimoId')
+	";
 	mysql_query($queryImg, $con);
 
 	header('Location: ../../pages/internal-system/ship-registration.php');
