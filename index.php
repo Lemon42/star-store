@@ -1,8 +1,12 @@
-<?php require('server/connect.php'); ?>
+<?php 
+	require('server/connect.php');
 
+	$dados = mysql_query('SELECT * FROM nave', $con) or die(mysql_error());
+	$row = mysql_fetch_assoc($dados);
+	$total = mysql_num_rows($dados);
+?>
 <!doctype html>
 <html lang="pt-br">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +15,6 @@
 
 	<title>Hello, world!</title>
 </head>
-
 <body>
 	<!--<div class="painel">
 		<h1 class="title is-1">Bem-vindo a Star Store!</h1>
@@ -20,27 +23,40 @@
 
 	<div class="container">
 		<div class="columns is-multiline">
+			<?php 
+			if($total > 0) {
+				do {
+
+			?>
 			<div class="column is-one-third">
 				<div class="card">
 					<div class="card-image">
 						<figure class="image is-4by3">
-							<img src="images/ships/15942081735f05afadc5ca0.jpg" alt="Placeholder image">
+							<?php
+							$id = $row['idNave'];
+							$imagemDados = mysql_query('SELECT * FROM imagem WHERE idNave = ' . $id, $con) or die(mysql_error());
+							$img = mysql_fetch_assoc($imagemDados)
+							?>
+							<img src="images/ships/<?=$img['nome']?>">
 						</figure>
 					</div>
 					<div class="card-content">
 						<div class="content">
-							<h1 class="title">USS Enterprise NCC-1701</h1>
-							<h2 class="subtitle">Star Trek</h2>
-							Motor de dobra movido a matéria/anti-matéria e armada com Torpedos Phasers e Canhões de
-							Photon
+							<h1 class="title"><?=$row['nome']?></h1>
+							<h2 class="subtitle"><?=$row['universo']?></h2>
+							<?=$row['descricao']?>
 							<br><br>
-							<label>Capacidade <strong>6000</strong></label>
+							<label>Capacidade: <strong><?=$row['capacidade']?></strong></label><br>
+							<label>Valor: <strong><?=$row['valor']?></strong></label>
 						</div>
 					</div>
 				</div>
 			</div>
+			<?php
+					}while($row = mysql_fetch_assoc($dados));
+			}
+			?>
 		</div>
 	</div>
 </body>
-
 </html>
