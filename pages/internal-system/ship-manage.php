@@ -49,7 +49,7 @@ $total = mysql_num_rows($dados);
 						<td><?=$row['universo']?></td>
 						<td><?=$row['capacidade']?></td>
 						<td><?=$row['valor']?></td>
-						<td><button class="button is-warning"><i class="fas fa-cogs" style="color: #fff;"></i></button>
+						<td><button class="button is-warning" onclick="window.location.href='ship-edit.php?ship=<?=$row['idNave']?>'"><i class="fas fa-cogs" style="color: #fff;"></i></button>
 						</td>
 						<td><button class="button is-danger"><i class="fas fa-trash-alt"
 									style="color: #fff;"></i></button></td>
