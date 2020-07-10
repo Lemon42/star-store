@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<form method="post" action="../../../server/execs/ship-registration-exec.php" enctype="multipart/form-data">
+		<form method="post" action="../../../server/execs/ship-registration-exec.php" enctype="multipart/form-data" autocomplete="off">
 			<div class="control">
 				<input name="nome" type="text" placeholder="Nome da nave" class="input is-info" required>
 			</div>
