@@ -9,6 +9,7 @@
 	<title>Cadastro de Naves - Sistema Interno</title>
 </head>
 <body>
+	<?php include('../../model/navbar-internal-system.html');?>
 	<div class="container">
 		<form method="post" action="../../../server/execs/ship-registration-exec.php" enctype="multipart/form-data" autocomplete="off">
 			<div class="control">
@@ -30,7 +31,6 @@
 			<div class="control">
 				<input type="file" name="imagem" accept="image/png, image/jpeg, image/gif" required>
 			</div>
-
 
 			<button type="submit" class="button is-link">Cadastrar</button>
 		</form>

@@ -11,12 +11,13 @@ $total = mysql_num_rows($dados);
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="../../../css/bulma.min.0.9.css">
-	<link rel="stylesheet" href="../../../css/form.css">
+	<link rel="stylesheet" href="../../css/bulma.min.0.9.css">
+	<link rel="stylesheet" href="../../css/form.css">
 
-	<title>Exclusão de Naves - Sistema Interno</title>
+	<title>Gestão de Naves - Sistema Interno</title>
 </head>
 <body>
+	<?php include('../../model/navbar-internal-system.html');?>
 	<div class="container">
 		<center>
 			<table class="table">
@@ -49,7 +50,9 @@ $total = mysql_num_rows($dados);
 						<td><?=$row['universo']?></td>
 						<td><?=$row['capacidade']?></td>
 						<td><?=$row['valor']?></td>
-						<td><button class="button is-warning" onclick="window.location.href='ship-edit.php?ship=<?=$row['idNave']?>'"><i class="fas fa-cogs" style="color: #fff;"></i></button>
+						<td><button class="button is-warning"
+								onclick="window.location.href='ship-edit.php?ship=<?=$row['idNave']?>'"><i
+									class="fas fa-cogs" style="color: #fff;"></i></button>
 						</td>
 						<td><button class="button is-danger"><i class="fas fa-trash-alt"
 									style="color: #fff;"></i></button></td>

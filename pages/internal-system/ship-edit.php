@@ -34,6 +34,7 @@ if(!isset($_GET["ship"])) {
 	</script>
 </head>
 <body>
+	<?php include('../../model/navbar-internal-system.html');?>
 	<div class="container">
 		<form method="post" action="../../../server/execs/ship-edit-exec.php" enctype="multipart/form-data" autocomplete="off">
 			<div class="control">
