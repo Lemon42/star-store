@@ -21,7 +21,7 @@
 	";
 	mysql_query($query, $con);
 
-	header('Location: ../../pages/internal-system/ship-registration.php');
+	header('Location: ../../pages/internal-system/ship-edit.php?ship='.$id);
 	exit();
 
 ?>
