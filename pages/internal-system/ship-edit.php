@@ -60,6 +60,24 @@ if(!isset($_GET["ship"])) {
 
 			<button type="submit" class="button is-link">Salvar alterações!</button>
 		</form>
+		<hr style="border: 1px solid #4a4a4a;">
+		<form method="post" action="../../../server/execs/ship-image-edit.php" enctype="multipart/form-data" autocomplete="off">
+			<h3 class="title is-3">Imagem</h3>
+			<?php
+			$id = $row['idNave'];
+			$imagemDados = mysql_query('SELECT * FROM imagem WHERE idNave = ' . $id, $con) or die(mysql_error());
+			$img = mysql_fetch_assoc($imagemDados)
+			?>
+			<div style="display: flex; align-items: center;">
+				<img class="form-img" src="../../images/ships/<?=$img['nome']?>">
+				<input type="file" name="imagem" accept="image/png, image/jpeg, image/gif" required style="margin-left: 15px;">
+			</div>
+			<input type="hidden" name="idImagem" value="<?=$img['idImagem']?>" />
+			<input type="hidden" name="id" value="<?=$row['idNave']?>" />
+			<br>
+			<button type="submit" class="button is-info">Alterar imagem</button>
+			<br><br>
+		</form>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
