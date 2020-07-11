@@ -54,8 +54,13 @@ $total = mysql_num_rows($dados);
 								onclick="window.location.href='ship-edit.php?ship=<?=$row['idNave']?>'"><i
 									class="fas fa-cogs" style="color: #fff;"></i></button>
 						</td>
-						<td><button class="button is-danger"><i class="fas fa-trash-alt"
-									style="color: #fff;"></i></button></td>
+						<td>
+							<a href="../../server/execs/ship-delete-exec.php?id=<?=$row['idNave']?>"
+								onclick="return confirm('Você realmente deseja deletar esse nave?\n(Essa ação é permanente)')">
+								<button class="button is-danger" style="color: #fff;"><i
+										class="fas fa-trash-alt"></i></button>
+							</a>
+						</td>
 					</tr>
 					<?php
 						}while($row = mysql_fetch_assoc($dados));
