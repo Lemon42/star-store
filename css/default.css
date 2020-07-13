@@ -1,0 +1,29 @@
+/* SELECAO */
+::selection {background: #35e1ffbd; color: #000;}
+::-moz-selection {background: #35e1ffbd; color: #000;}
+
+/* BARRA */
+::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #161718;
+}
+
+@media screen and (min-width: 801px) {
+    ::-webkit-scrollbar {
+	   width: 8px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    ::-webkit-scrollbar {
+	   width: 5px;
+    }
+}
