@@ -26,7 +26,6 @@
 			<?php 
 			if($total > 0) {
 				do {
-
 			?>
 			<div class="column is-one-third">
 				<div class="card">
@@ -37,7 +36,7 @@
 							$imagemDados = mysql_query('SELECT * FROM imagem WHERE idNave = ' . $id, $con) or die(mysql_error());
 							$img = mysql_fetch_assoc($imagemDados)
 							?>
-							<img src="images/ships/<?=$img['nome']?>">
+							<img class="response-image" src="images/ships/<?=$img['nome']?>">
 						</figure>
 					</div>
 					<div class="card-content">
@@ -53,7 +52,7 @@
 				</div>
 			</div>
 			<?php
-					}while($row = mysql_fetch_assoc($dados));
+				}while($row = mysql_fetch_assoc($dados));
 			}
 			?>
 		</div>
