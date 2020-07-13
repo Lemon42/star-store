@@ -56,7 +56,7 @@ $total = mysql_num_rows($dados);
 						</td>
 						<td>
 							<a href="../../server/execs/ship-delete-exec.php?id=<?=$row['idNave']?>"
-								onclick="return confirm('Você realmente deseja deletar esse nave?\n(Essa ação é permanente)')">
+								onclick="return confirmExclusion('<?=$row['nome']?>')">
 								<button class="button is-danger" style="color: #fff;"><i
 										class="fas fa-trash-alt"></i></button>
 							</a>
@@ -73,5 +73,6 @@ $total = mysql_num_rows($dados);
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"
 		integrity="sha512-M+hXwltZ3+0nFQJiVke7pqXY7VdtWW2jVG31zrml+eteTP7im25FdwtLhIBTWkaHRQyPrhO2uy8glLMHZzhFog=="
 		crossorigin="anonymous"></script>
+	<script src="../../js/confim-exclusion.js"></script>
 </body>
 </html>
