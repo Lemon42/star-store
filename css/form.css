@@ -18,3 +18,7 @@ input[type=number] {
  appearance: textfield;
 
 }
+
+.navbar-item{
+  color: #fff;
+}
