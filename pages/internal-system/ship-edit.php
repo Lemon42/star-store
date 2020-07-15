@@ -1,5 +1,6 @@
 <?php
 require("../../server/connect.php");
+require("../../server/execs/login-verification.php");
 
 if(!isset($_GET["ship"])) {
 	header('Location: ship-manage.php');
@@ -37,6 +38,7 @@ if(!isset($_GET["ship"])) {
 	<?php include('../../model/navbar-internal-system.html');?>
 	<div class="container">
 		<form method="post" action="../../../server/execs/ship-edit-exec.php" enctype="multipart/form-data" autocomplete="off">
+			<h3 class="title is-3">Dados</h3>
 			<div class="control">
 				<label>Nome</label>
 				<input name="nome" id="nome" type="text" class="input is-info">

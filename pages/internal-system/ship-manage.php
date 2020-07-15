@@ -1,5 +1,6 @@
 <?php
 require("../../server/connect.php");
+require("../../server/execs/login-verification.php");
 
 $dados = mysql_query('SELECT * FROM nave', $con) or die(mysql_error());
 $row = mysql_fetch_assoc($dados);

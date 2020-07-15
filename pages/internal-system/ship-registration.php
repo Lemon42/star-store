@@ -1,3 +1,4 @@
+<?php require("../../server/execs/login-verification.php"); ?>
 <!doctype html>
 <html lang="pt-br">
 <head>
