@@ -10,7 +10,7 @@
 	<title>Cadastro de Naves - Sistema Interno</title>
 </head>
 <body>
-	<?php include('../../model/navbar-internal-system.html');?>
+	<?php include('../../model/navbar-internal-system.php');?>
 	<div class="container">
 		<form method="post" action="../../../server/execs/ship-registration-exec.php" enctype="multipart/form-data" autocomplete="off">
 			<div class="control">
@@ -37,6 +37,7 @@
 		</form>
 	</div>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<!-- Mascara de Valor -->
 	<script src="../../../js/mask-number-min.js"></script>

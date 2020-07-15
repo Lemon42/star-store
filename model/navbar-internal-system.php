@@ -15,7 +15,7 @@
 	<div id="navbarBasicExample" class="navbar-menu">
 		<div class="navbar-start">
 			<a href="../../index.php" class="navbar-item">
-				Home
+				Loja
 			</a>
 			<a href="ship-registration.php" class="navbar-item">
 				Cadastro
@@ -23,12 +23,17 @@
 			<a href="ship-edit.php" class="navbar-item">
 				Gerenciamento
 			</a>
-			
 		</div>
 
 		<div class="navbar-end">
 			<div class="navbar-item">
+				<i class="fas fa-user" style="margin-right: 5px"></i>
+				<?php echo $_SESSION['usuario_nome'];?>
 			</div>
+			<a class="navbar-item" style="color: #F03A5F;" href="../../server/execs/logout.php">
+				<strong>Sair</strong>
+				<i class="fas fa-sign-out-alt" style="margin-left: 5px"></i>
+			</a>
 		</div>
 	</div>
 </nav>

@@ -18,7 +18,7 @@ $total = mysql_num_rows($dados);
 	<title>Gestão de Naves - Sistema Interno</title>
 </head>
 <body>
-	<?php include('../../model/navbar-internal-system.html');?>
+	<?php include('../../model/navbar-internal-system.php');?>
 	<div class="container">
 		<center>
 			<table class="table">
