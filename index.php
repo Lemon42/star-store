@@ -52,7 +52,7 @@
 						<div class="content">
 							<div class="title"><?=$row['nome']?></div>
 							<div class="subtitle"><?=$row['universo']?></div>
-							<div class="description"><?=$row['descricao']?></div><br>
+							<div class="description"><?=$row['descricao']?>.</div><br>
 							<div class="capacidade">Capacidade: <strong><?=$row['capacidade']?></strong></div>
 							<div class="value">Valor: R$ <strong><?=$row['valor']?></strong></div>
 						</div>
