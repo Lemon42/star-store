@@ -27,7 +27,7 @@
 		</div>
 	</div>
 
-
+	<?php include('model/navbar.html'); ?>
 
 	<div class="container" style="margin-top: 30px;">
 		<div class="columns is-multiline">
@@ -65,6 +65,7 @@
 			?>
 		</div>
 	</div>
-</body>
 
+	<?php include('model/footer.html'); ?>
+</body>
 </html>
