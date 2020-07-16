@@ -1,6 +1,6 @@
 /* SELECAO */
-::selection {background: #35e1ffbd; color: #000;}
-::-moz-selection {background: #35e1ffbd; color: #000;}
+::selection {background: rgba(60, 135, 255, 0.76); color: #000;}
+::-moz-selection {background: rgba(60, 135, 255, 0.76); color: #000;}
 
 /* BARRA */
 ::-webkit-scrollbar-track {
