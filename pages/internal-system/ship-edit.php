@@ -22,6 +22,7 @@ if(!isset($_GET["ship"])) {
 	<link rel="stylesheet" href="../../../css/form.css">
 
 	<title>Edição de Nave - Sistema Interno</title>
+	<link rel="shortcut icon" href="../../images/favicon-manage.png" type="image/x-icon" />
 
 	<!-- Passando dados para o JS -->
 	<script>

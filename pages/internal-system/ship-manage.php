@@ -16,6 +16,7 @@ $total = mysql_num_rows($dados);
 	<link rel="stylesheet" href="../../css/form.css">
 
 	<title>Gestão de Naves - Sistema Interno</title>
+	<link rel="shortcut icon" href="../../images/favicon-manage.png" type="image/x-icon" />
 </head>
 <body>
 	<?php include('../../model/navbar-internal-system.php');?>

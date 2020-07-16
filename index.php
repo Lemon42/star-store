@@ -16,13 +16,14 @@
 	<link rel="stylesheet" href="css/default.css">
 
 	<title>Star Store - Home</title>
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
 </head>
 
 <body>
 	<div class="painel">
 		<div class="painel-content">
-			<h1 class="title is-1" style="color: #161718">Bem-vindo a Star Store!</h1>
-			<h2 class="subtitle is-2" style="color: #161718">O Universo precisa ser explorado, sua viagem começa aqui</h2>
+			<h1 class="title is-1" style="color: #161718">Bem-vindo a Star Store</h1>
+			<h2 class="subtitle is-2" style="color: #161718">O Universo precisa ser explorado, sua viagem começa aqui!</h2>
 		</div>
 	</div>
 

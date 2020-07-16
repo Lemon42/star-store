@@ -10,11 +10,12 @@
 	<link rel="stylesheet" href="../../css/login.css">
 
 	<title>Login - Sistema Administrador</title>
+	<link rel="shortcut icon" href="../../images/favicon-manage.png" type="image/x-icon" />
 </head>
 <body>
 	<div class="painel">
 		<div class="painel-content">
-			<h1 class="title is-4">Login Sistema</h1>
+			<h1 class="title is-4">Sistema de Login</h1>
 			<?php
 			if(isset($_SESSION['nao_autenticado'])){
 			?>
