@@ -21,7 +21,7 @@
 			?>
 			<div class="error">
 				<i class="fas fa-exclamation-triangle error-title"></i>
-				<h1 class="error-title">Erro tentar efetuar o login!</h1>
+				<h1 class="error-title">Erro ao tentar efetuar o login!</h1>
 			</div>
 			<?php
 			}
