@@ -6,6 +6,7 @@
 <body><h1>Aguarde um momento</h1></body>
 <?php
 	require('../connect.php');
+	require('login-verification.php');
 
 	$id = mysql_real_escape_string($_GET['id']);
 

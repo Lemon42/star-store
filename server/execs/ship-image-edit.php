@@ -6,6 +6,7 @@
 <body><h1>Aguarde um momento</h1></body>
 <?php
 	require('../connect.php');
+	require('login-verification.php');
 
 	$idImagem = $_POST['idImagem'];
 	$idNave = $_POST['id'];

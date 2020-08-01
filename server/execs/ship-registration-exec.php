@@ -6,6 +6,7 @@
 <body><h1>Aguarde um momento</h1></body>
 <?php
 	require('../connect.php');
+	require('login-verification.php');
 
 	$nome = mysql_real_escape_string($_POST['nome']);
 	$universo = mysql_real_escape_string($_POST['universo']);
